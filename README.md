@@ -1,4 +1,4 @@
-Testing harness and mock UI for to interact with the NCCER.org validation endpoints.
+Testing harness and mock UI for to interact with the [NCCER.org](https://www.nccer.org/nccer-home) validation endpoints.
 
 # create-svelte
 
