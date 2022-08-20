@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	font-family: 'Work Sans', sans-serif;
+}
+input {
+	@apply border bg-white border-gray-800 dark:border-gray-200 dark:bg-slate-600;
+}
