@@ -4,7 +4,7 @@
 	import Button from './Button.svelte';
 	let selectedType: string = 'JDE';
 	let lookupTypes: string[] = ['JDE', 'NCCER', 'SSN'];
-	let ssn: string = '437692';
+	let ssn: string = '';
 	let nccerId: string = '4799691';
 	let jdeID: string = '228179';
 	export let ssnCallback = (ssn: string) => {};
