@@ -105,7 +105,7 @@
 </script>
 
 {#if $account != null}
-	{#if $account.idTokenClaims.roles.includes('NCCERViewer')}
+	{#if $account.idTokenClaims !== undefined && $account.idTokenClaims.roles.includes('NCCERViewer')}
 		<NavBar nccerCallback={NCCERLookup} ssnCallback={SSNLookup} jdeCallback={JDELookup} />
 		<div class="md:container md:mx-auto pt-5">
 			{#if loadingUser}
