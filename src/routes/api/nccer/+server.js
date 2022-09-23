@@ -1,28 +1,27 @@
 import 'dotenv/config';
+import { error } from '@sveltejs/kit';
 
 const rootURL = process.env.VITE_ROOTURL;
 const username = process.env.VITE_USERNAME;
 const password = process.env.VITE_PASSWORD;
 
-export const GET = async (request) => {
+/** @type {import('./$types').RequestHandler} */
+export async function GET({ url }) {
 	try {
 		let response = await fetch(
-			`https://staging-api.nccer.org/api/user/OnlineVerification?NccerCardNumber=${request.params.id}`,
+			`https://api.nccer.org/api/User/GetByAlternateTypeAndId/USSSN/292724213`,
 			{
 				method: 'GET',
-				headers: { Authorization: 'Basic ' + btoa('brootbot:7JWAe6bS9zca') }
+				headers: { Authorization: 'Basic ' + btoa('brootbot:FRcWO75rJSBU') }
 			}
 		);
 		let userData = await response.json();
-		return {
-			status: 200,
-			body: userData
-		};
+		return new Response({ userData });
 	} catch (error) {
 		console.log(error);
 		return {
 			status: 500,
-			body: { error: error.message }
+			body: { error: error }
 		};
 	}
-};
+}

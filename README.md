@@ -1,5 +1,3 @@
-Testing harness and mock UI to interact with the [NCCER.org](https://www.nccer.org/nccer-home) validation endpoints.
-
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

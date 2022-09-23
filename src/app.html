@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 		%sveltekit.head%
+		<script>
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+
+window.process = {
+  ...window.process,
+};
+		</script>
+
+		<style>
+						::-webkit-scrollbar{
+    height: 12px;
+    width: 12px;
+}
+::-webkit-scrollbar-track{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1ex;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--theme-color);
+    border-radius: 1ex;
+}
+::-webkit-scrollbar-corner{
+    background: none;
+}
+		</style>
 	</head>
-	<body class="bg-white dark:bg-slate-800 text-gray-800 dark:text-gray-200 ">
+	<body class="bg-neutral-200 dark:bg-gray-900 text-gray-500, dark:text-white mx-auto">
 		<div>%sveltekit.body%</div>
 	</body>
 </html>
