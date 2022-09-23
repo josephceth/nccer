@@ -8,7 +8,7 @@ export const msalConfig = {
 	auth: {
 		clientId: '83a320ac-df35-4fff-a248-3582578fc79d',
 		authority: 'https://login.microsoftonline.com/a3ff746a-584e-4da9-80fd-6d0fc99faaa5',
-		redirectUri: 'https://localhost:5173/'
+		redirectUri: 'https://nccer-ldt6-3cm5vlme4-josephceth.vercel.app/'
 	},
 	cache: {
 		cacheLocation: 'sessionStorage', // This configures where your cache will be stored
